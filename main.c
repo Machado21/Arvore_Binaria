@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "arvore_bin.h"
+#include "Arvore_bin.h"
 
 int main() {
 
     Arv_bin *arv_bin;
-    Arv_bin *test;
 
     arv_bin = arv_cria( arv_cria_no('a',  arv_cria_no('b', NULL,  arv_cria_no('d', NULL, NULL)),
             arv_cria_no('c',  arv_cria_no('e',  NULL, NULL),  arv_cria_no('f', NULL, NULL))));

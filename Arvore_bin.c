@@ -1,8 +1,8 @@
 //
-// Created by Machado on 13/03/2019.
+// Created by Gabriel Machado on 13/03/2019.
 //
 
-#include "arvore_bin.h"
+#include "Arvore_bin.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -35,9 +35,13 @@ void no_libera(Nodo *no) {
     }
 }
 
+/**Retorna 1 ou 0 se pertence ou nao na arvore
+ * @param arv
+ * @param valor
+ * @return
+ * */
 int arv_pertence(Arv_bin *arv, char valor) {
     return no_pertence(arv->raiz, valor);
-
 }
 
 int no_pertence(Nodo *raiz, char valor) {
@@ -72,6 +76,10 @@ Nodo *no_busca(Nodo *no, char valor) {
     }
 }
 
+/**Retorna a altura da Arvore
+ * @param raiz
+ * @return int
+ * */
 int altura_arv(Arv_bin *raiz) {
     return altura_no(raiz->raiz);
 }
@@ -99,6 +107,10 @@ int tamanho(Nodo *no){
     } else {
         return 0;
     }
+}
+
+void alrgura(Arv_bin *arv){
+
 }
 
 void inprime_escolhendo_ordem(Arv_bin *arv) {

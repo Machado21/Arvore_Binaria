@@ -1,5 +1,5 @@
 //
-// Created by Machado on 13/03/2019.
+// Created by Gabriel Machado on 13/03/2019.
 //
 
 #ifndef ARVORE_BINARIA_ARVORE_BIN_H
@@ -7,15 +7,7 @@
 
 #endif //ARVORE_BINARIA_ARVORE_BIN_H
 
-typedef struct no {
-    char infor;
-    struct no *esq;
-    struct no *dir;
-} Nodo;
-
-typedef struct arv_bin {
-    Nodo *raiz;
-} Arv_bin;
+#include "Structs.h"
 
 Arv_bin *arv_cria(Nodo *raiz);
 
@@ -42,6 +34,8 @@ int maior(int esq, int dir);
 int tamanho_arv(Arv_bin *arv);
 
 int tamanho(Nodo *no);
+
+void alrgura(Arv_bin *arv);
 
 void inprime_escolhendo_ordem(Arv_bin *arv);
 
