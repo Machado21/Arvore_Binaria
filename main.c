@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Arvore_bin.h"
-#include "FilaDin.h"
 
 
 int main() {

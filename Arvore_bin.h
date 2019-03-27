@@ -2,7 +2,6 @@
 // Created by Gabriel Machado on 13/03/2019.
 //
 
-
 #ifndef ARVORE_BINARIA_ARVORE_BIN_H
 #define ARVORE_BINARIA_ARVORE_BIN_H
 
@@ -32,7 +31,7 @@ int arv_pertence(Arv_bin *arv, char valor);
 
 int no_pertence(Nodo *raiz, char valor);
 
-Arv_bin *arv_busca(Arv_bin *arv, char valor);
+Nodo *arv_busca(Arv_bin *arv, char valor);
 
 Nodo *no_busca(Nodo *no, char valor);
 
@@ -61,3 +60,9 @@ void pos(Nodo *no);
 void arv_imprime_formatado(Arv_bin *arv);
 
 void arv_imprime_formatado_no(Nodo *raiz);
+
+void iterativo_pre(Arv_bin arv_Bin);
+
+void iterativo_in(Arv_bin arv_bin);
+
+void iterativo_pos(Arv_bin arv_bin);

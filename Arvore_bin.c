@@ -2,10 +2,10 @@
 // Created by Gabriel Machado on 13/03/2019.
 //
 
-#include "FilaDin.h"
 #include "Arvore_bin.h"
 #include <stdlib.h>
 #include <stdio.h>
+////INFELIZMENTE NAO É POSSIVEL IMPORTAR A BIBLIOTECA STAK OU IOSTREAM PARA C
 
 Arv_bin *arv_cria(Nodo *raiz) {
     Arv_bin *arv = (Arv_bin *) malloc(sizeof(Arv_bin));
@@ -58,7 +58,7 @@ int no_pertence(Nodo *raiz, char valor) {
     return no_pertence(raiz->dir, valor);
 }
 
-Arv_bin *arv_busca(Arv_bin *arv, char valor) {
+Nodo *arv_busca(Arv_bin *arv, char valor) {
     return no_busca(arv->raiz, valor);
 }
 
@@ -204,3 +204,11 @@ void arv_imprime_formatado_no(Nodo *raiz) {
     }
     printf(">");
 }
+
+void iterativo_pre(Arv_bin arv_Bin){
+
+}
+
+void iterativo_in(Arv_bin arv_bin){}
+
+void iterativo_pos(Arv_bin arv_bin){}
