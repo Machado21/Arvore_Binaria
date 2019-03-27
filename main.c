@@ -17,9 +17,11 @@ int main() {
 
     printf("\nAltura = %d", altura_arv(arv_bin));
     printf("\nTamanho = %d", tam);
-    printf("\nLargura = ");
+
+    /*printf("\nLargura = ");
     Fila *fila = cria_fila();
-    largura(arv_bin->raiz, fila);
+    largura(arv_bin->raiz, fila);*/
+
 
     arv_libera(arv_bin);
 

@@ -46,7 +46,7 @@ int tamanho_arv(Arv_bin *arv);
 
 int tamanho(Nodo *no);
 
-void largura(Nodo *arv, struct fila *fila);
+//void largura(Nodo *arv, struct fila *fila);
 
 void inprime_escolhendo_ordem(Arv_bin *arv);
 

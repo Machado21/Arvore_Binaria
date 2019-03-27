@@ -3,7 +3,6 @@
 //
 
 #include <stdlib.h>
-#include "Arvore_bin.h"
 #include "FilaDin.h"
 
 Fila *cria_fila() {

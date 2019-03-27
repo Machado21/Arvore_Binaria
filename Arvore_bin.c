@@ -109,21 +109,21 @@ int tamanho(Nodo *no) {
         return 0;
     }
 }
-
-void largura(Nodo *raiz, struct fila *fila) {
-    insere_fila(fila, raiz->infor);
-    while (!fila_vazia(fila)) {
-        char c = remove_fila(fila);
-        if (raiz != NULL) {
-            printf("%c ", c);
-            insere_fila(fila, raiz->esq);
-            insere_fila(fila, raiz->dir);
-        }
-//            if (raiz->esq != NULL) largura(raiz->esq, fila);
-//            if (raiz->dir != NULL) largura(raiz->dir, fila);
-    }
-    libera_fila(fila);
-}
+// Infelizmente a função nao esta Funcionando
+//void largura(Nodo *raiz, struct fila *fila) {
+//    insere_fila(fila, raiz->infor);
+//    while (!fila_vazia(fila)) {
+//        char c = remove_fila(fila);
+//        if (raiz != NULL) {
+//            printf("%c ", c);
+//            insere_fila(fila, raiz->esq);
+//            insere_fila(fila, raiz->dir);
+//        }
+////            if (raiz->esq != NULL) largura(raiz->esq, fila);
+////            if (raiz->dir != NULL) largura(raiz->dir, fila);
+//    }
+//    libera_fila(fila);
+//}
 
 void inprime_escolhendo_ordem(Arv_bin *arv) {
     int ordem;
