@@ -16,12 +16,10 @@ int main() {
     int tam = tamanho_arv(arv_bin);
 
     printf("\nAltura = %d", altura_arv(arv_bin));
-    printf("\nTamanho = %d", tam);
+    printf("\nTamanho = %d\n", tam);
 
-    /*printf("\nLargura = ");
-    Fila *fila = cria_fila();
-    largura(arv_bin->raiz, fila);*/
-
+    espelho(arv_bin->raiz);
+    inprime_escolhendo_ordem(arv_bin);
 
     arv_libera(arv_bin);
 

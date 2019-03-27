@@ -98,6 +98,18 @@ int maior(int esq, int dir) {
     return esq > dir ? esq : dir;
 }
 
+Nodo *espelho(Nodo *raiz) {
+
+    if (raiz == NULL)  {
+        return NULL;
+    }
+    Nodo *nodo = espelho(raiz->esq);
+    raiz->esq = raiz->dir;
+    raiz->dir = nodo;
+
+    return raiz;
+}
+
 int tamanho_arv(Arv_bin *arv) {
     return tamanho(arv->raiz);
 }

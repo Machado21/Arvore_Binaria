@@ -42,6 +42,8 @@ int altura_no(Nodo *no);
 
 int maior(int esq, int dir);
 
+Nodo *espelho(Nodo* raiz);
+
 int tamanho_arv(Arv_bin *arv);
 
 int tamanho(Nodo *no);
