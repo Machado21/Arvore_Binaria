@@ -98,6 +98,9 @@ int maior(int esq, int dir) {
     return esq > dir ? esq : dir;
 }
 
+/**Função recebe a raiz de uma arvore e espelha na vertical
+ * @param raiz
+ * @return*/
 Nodo *espelho(Nodo *raiz) {
 
     if (raiz == NULL)  {
@@ -106,7 +109,6 @@ Nodo *espelho(Nodo *raiz) {
     Nodo *nodo = espelho(raiz->esq);
     raiz->esq = raiz->dir;
     raiz->dir = nodo;
-
     return raiz;
 }
 
@@ -131,11 +133,12 @@ int tamanho(Nodo *no) {
 //            insere_fila(fila, raiz->esq);
 //            insere_fila(fila, raiz->dir);
 //        }
-////            if (raiz->esq != NULL) largura(raiz->esq, fila);
-////            if (raiz->dir != NULL) largura(raiz->dir, fila);
+//            if (raiz->esq != NULL) largura(raiz->esq, fila);
+//            if (raiz->dir != NULL) largura(raiz->dir, fila);
 //    }
 //    libera_fila(fila);
 //}
+
 
 void inprime_escolhendo_ordem(Arv_bin *arv) {
     int ordem;

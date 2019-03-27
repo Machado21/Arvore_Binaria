@@ -6,6 +6,7 @@
 
 int main() {
 
+    //TODO Deixar Bonito
     Arv_bin *arv_bin;
 
     arv_bin = arv_cria(arv_cria_no('a', arv_cria_no('b', NULL, arv_cria_no('d', NULL, NULL)),
