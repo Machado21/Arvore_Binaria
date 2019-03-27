@@ -2,6 +2,7 @@
 // Created by Gabriel Machado on 13/03/2019.
 //
 
+#include "FilaDin.h"
 #include "Arvore_bin.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -97,26 +98,37 @@ int maior(int esq, int dir) {
     return esq > dir ? esq : dir;
 }
 
-int tamanho_arv(Arv_bin *arv){
+int tamanho_arv(Arv_bin *arv) {
     return tamanho(arv->raiz);
 }
 
-int tamanho(Nodo *no){
-    if (no != NULL){
-        return 1 + tamanho(no->esq) +tamanho(no->dir);
+int tamanho(Nodo *no) {
+    if (no != NULL) {
+        return 1 + tamanho(no->esq) + tamanho(no->dir);
     } else {
         return 0;
     }
 }
 
-void alrgura(Arv_bin *arv){
-
+void largura(Nodo *raiz, struct fila *fila) {
+    insere_fila(fila, raiz->infor);
+    while (!fila_vazia(fila)) {
+        char c = remove_fila(fila);
+        if (raiz != NULL) {
+            printf("%c ", c);
+            insere_fila(fila, raiz->esq);
+            insere_fila(fila, raiz->dir);
+        }
+//            if (raiz->esq != NULL) largura(raiz->esq, fila);
+//            if (raiz->dir != NULL) largura(raiz->dir, fila);
+    }
+    libera_fila(fila);
 }
 
 void inprime_escolhendo_ordem(Arv_bin *arv) {
     int ordem;
-    printf("1 - Imprime PreOrden. \n2 - Imprime InOrdem. \n3 - Imprime PosOrdem.\n");
-    scanf_s("%d", &ordem);
+    printf("1 - Imprime PreOrden. \n2 - Imprime InOrdem. \n3 - Imprime PosOrdem.\n4 - Imprime Formatado.\n");
+    scanf("%d", &ordem);
     do {
         switch (ordem) {
             case 1 :
@@ -128,11 +140,14 @@ void inprime_escolhendo_ordem(Arv_bin *arv) {
             case 3 :
                 pos(arv->raiz);
                 break;
+            case 4:
+                arv_imprime_formatado(arv);
+                break;
             default:
-                printf("Opcao invalida, Tente de 1 a 3 : ");
+                printf("Opcao invalida, Tente de 1 a 4 : ");
                 break;
         }
-    } while (ordem < 1 || ordem > 3);
+    } while (ordem < 1 || ordem > 4);
 
 }
 
@@ -158,4 +173,19 @@ void pos(Nodo *no) {
         pos(no->dir);
         printf("%c ", no->infor);
     }
+}
+
+void arv_imprime_formatado(Arv_bin *arv) {
+    arv_imprime_formatado_no(arv->raiz);
+    printf("\n");
+}
+
+void arv_imprime_formatado_no(Nodo *raiz) {
+    printf("<");
+    if (raiz != NULL) {
+        printf("%c", raiz->infor);
+        arv_imprime_formatado_no(raiz->esq);
+        arv_imprime_formatado_no(raiz->dir);
+    }
+    printf(">");
 }

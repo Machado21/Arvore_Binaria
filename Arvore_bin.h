@@ -2,12 +2,23 @@
 // Created by Gabriel Machado on 13/03/2019.
 //
 
+
 #ifndef ARVORE_BINARIA_ARVORE_BIN_H
 #define ARVORE_BINARIA_ARVORE_BIN_H
 
 #endif //ARVORE_BINARIA_ARVORE_BIN_H
 
-#include "Structs.h"
+
+typedef struct no {
+    char infor;
+    struct no *esq;
+    struct no *dir;
+} Nodo;
+
+typedef struct arv_bin {
+    struct no *raiz;
+} Arv_bin;
+
 
 Arv_bin *arv_cria(Nodo *raiz);
 
@@ -35,7 +46,7 @@ int tamanho_arv(Arv_bin *arv);
 
 int tamanho(Nodo *no);
 
-void alrgura(Arv_bin *arv);
+void largura(Nodo *arv, struct fila *fila);
 
 void inprime_escolhendo_ordem(Arv_bin *arv);
 
@@ -44,3 +55,7 @@ void pre(Nodo *no);
 void in(Nodo *no);
 
 void pos(Nodo *no);
+
+void arv_imprime_formatado(Arv_bin *arv);
+
+void arv_imprime_formatado_no(Nodo *raiz);

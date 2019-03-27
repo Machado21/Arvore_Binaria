@@ -3,13 +3,14 @@
 //
 
 #include <stdlib.h>
+#include "Arvore_bin.h"
 #include "FilaDin.h"
 
 Fila *cria_fila() {
     Fila *fila = (Fila *) malloc(sizeof(Fila));
     if (fila != NULL) {
-        fila->final = NULL;
         fila->inicio = NULL;
+        fila->final = NULL;
     }
     return fila;
 }
@@ -37,11 +38,11 @@ int tamanho_fila(Fila *fila) {
     return cont;
 }
 
-int insere_fila(Fila *fila, Nodo nodo) {
+int insere_fila(Fila *fila, char ele) {
     if (fila == NULL) return 0; //A Fila não foi Criada.
     Elemento *no = (Elemento *) malloc(sizeof(Elemento));
     if (no == NULL) return 0; //Caso não seja possivel alocar um novo Nodo da fila.
-    no->nodo = nodo;
+    no->info = ele;
     no->prox = NULL;
 
     if (fila->final == NULL) {
@@ -53,27 +54,33 @@ int insere_fila(Fila *fila, Nodo nodo) {
     return 1;
 }
 
-int remove_fila(Fila *fila) {
+char remove_fila(Fila *fila) {
     if (fila == NULL) return 0;
     if (fila->inicio == NULL) return 0;
-
+    char c = fila->inicio->info;
     Elemento *no = fila->inicio;
-    fila->inicio = fila->inicio->prox;
+    if (fila->inicio->prox == NULL){
+        fila->inicio = NULL;
+    }
+    else {
+        fila->inicio = no->prox;
+    }
+
     if (fila->inicio == NULL) {
         fila->final = NULL;
     }
     free(no);
-    return 1;
+    return c;
 }
 
-int condulta_fila(Fila *fila, Nodo *nodo){
+int condulta_fila(Fila *fila, Elemento *ele) {
     if (fila == NULL) return 0;
-    if (fila->inicio  == NULL) return 0;
-    *nodo = fila->inicio->nodo;
+    if (fila->inicio == NULL) return 0;
+    ele = fila->inicio;
     return 1;
 }
 
-int fila_cheia(Fila fila) {
+int fila_cheia(Fila *fila) {
     return 0;
 }
 
